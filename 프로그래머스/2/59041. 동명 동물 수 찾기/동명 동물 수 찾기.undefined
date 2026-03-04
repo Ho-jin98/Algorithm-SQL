@@ -1,0 +1,7 @@
+-- 코드를 입력하세요
+SELECT a.name, COUNT(a.name) AS count
+FROM ANIMAL_INS a
+WHERE a.name IS NOT NULL
+GROUP BY a.name
+HAVING COUNT (a.name) >= 2
+ORDER BY a.name asc
