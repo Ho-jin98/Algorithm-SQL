@@ -1,0 +1,9 @@
+-- 코드를 입력하세요
+SELECT DISTINCT(cr.CAR_ID)
+FROM CAR_RENTAL_COMPANY_CAR cr
+JOIN CAR_RENTAL_COMPANY_RENTAL_HISTORY AS ch ON cr.CAR_ID = ch.CAR_ID
+WHERE cr.CAR_TYPE = '세단' AND MONTH(START_DATE) = 10
+ORDER BY cr.CAR_ID DESC;
+
+# DISTINCT -> SELECT 절에서 사용, 지정한 컬럼들의 조합이 중복되는 경우,
+# 중복을 제거하고 한줄만 남김
