@@ -14,3 +14,8 @@ WHERE START_DATE BETWEEN '2022-08-01' AND '2022-10-31' AND
     )
 GROUP BY MONTH, CAR_ID
 ORDER BY MONTH ASC, CAR_ID DESC;
+
+# 서브쿼리로 2022년 08월 ~ 2022년 10월에 5회 이상 대여한 자동차를 먼저 조회,
+
+# 메인쿼리에 날짜가 없으면 8~10월 범위 밖의 데이터도 집계되버리기 때문에,
+# BETWEEN '2022-08-01' AND '2022-10-31' 조건을 서브쿼리와 동일하게 사용해야 함
