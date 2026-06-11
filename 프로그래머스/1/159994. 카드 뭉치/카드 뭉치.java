@@ -12,7 +12,10 @@ class Solution {
             // goal에서 하나씩 순서대로 꺼내오는 값이랑 cardList1에 0번째 인덱스 값이 같다면,
             // 이미 사용된 값이므로 cardList1에서 제거,
             if (!cardList1.isEmpty() && result.equals(cardList1.get(0))) {
+                // 조건문에 만족하면 remove(0)으로 맨 앞의 값들을 지우므로,
+                // 다음 반복문 비교시 하나씩 땡겨져서 0번째 인덱스끼리만 계속 비교하게 되는 원리
                 cardList1.remove(0);
+                
                 // cardList2가 비어있지 않고,
                 // goal에서 하나씩 순서대로 꺼내오는 값이랑 cardList2에 0번째 인덱스 값이 같다면,
                 // 이미 사용된 값이므로 cardList2에서 제거,
@@ -26,6 +29,5 @@ class Solution {
         }
         // 해당 조건을 모두 통과하면 Yes 리턴
         return "Yes";
-        
     }
 }
